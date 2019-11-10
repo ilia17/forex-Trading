@@ -1,0 +1,24 @@
+
+pip = 0.0001
+
+print("Wellcome Forex Traders!")
+
+leverage = input("Enter Your Trading Leverage As Integer (Ex: 50, 100, 200, 500):\n ")
+investment = input("Input Your Deposit Amount As Integer (Ex: 200, 500, 1000):\n ")
+risk= input("Please Choose Your Risk Ratio From 1% - 5% As Integer: ex(1, 2, 3, 4, 5 )\n ")
+value = int(leverage) * int(investment)
+dollar_amount_per_trade= value * pip
+lot = dollar_amount_per_trade / 10
+unit = lot * 100000
+risk_amount = lot * (int(risk)/100)
+trade_values= risk_amount*10
+
+print(f"""Leverage: {leverage}\n
+    Balance: {investment}$\n 
+    Risk Management: {risk}% \n 
+    Total Trading Value: {value}$\n 
+    Max Amount Per Trade: {dollar_amount_per_trade}$\n 
+    Max Lot Size: {lot}\n
+    Max Unit Size: {unit}\n
+    Lot Trade Size Dependant On Your {risk}% Risk: {risk_amount}\n
+    Dollar Trade On {risk}% Risk Is {trade_values}$""")
